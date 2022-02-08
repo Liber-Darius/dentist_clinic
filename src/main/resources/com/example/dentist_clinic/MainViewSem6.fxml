@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane prefHeight="423.0" prefWidth="682.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentist_clinic.FXController">
+   <children>
+      <TabPane prefHeight="440.0" prefWidth="682.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Add Patient">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="405.0" prefWidth="682.0">
+                     <children>
+                        <Label layoutX="26.0" layoutY="26.0" text="Fill in patient details" />
+                        <TextField fx:id="patient_id_tf" layoutX="130.0" layoutY="64.0" />
+                        <Label layoutX="59.0" layoutY="68.0" text="ID" />
+                        <Label layoutX="50.0" layoutY="101.0" text="name" />
+                        <Label layoutX="55.0" layoutY="136.0" text="age" />
+                        <Label layoutX="25.0" layoutY="171.0" text="phone number" />
+                        <TextField fx:id="name_tf" layoutX="130.0" layoutY="97.0" />
+                        <TextField fx:id="age_tf" layoutX="130.0" layoutY="132.0" />
+                        <TextField fx:id="phone_number_tf" layoutX="130.0" layoutY="167.0" />
+                        <Button fx:id="addPatient" layoutX="20.0" layoutY="203.0" mnemonicParsing="false" onAction="#addPatientFunction" prefHeight="25.0" prefWidth="89.0" text="Add Patient" />
+                        <Button fx:id="clearFieldsBtn" layoutX="131.0" layoutY="203.0" mnemonicParsing="false" onAction="#clearFieldsForPatient" prefHeight="25.0" prefWidth="150.0" text="Clear fields" />
+                        <TableView fx:id="patientTable" layoutX="299.0" layoutY="60.0" prefHeight="167.0" prefWidth="361.0">
+                           <columns>
+                              <TableColumn fx:id="patientIDCol" prefWidth="66.0" text="PatientID" />
+                              <TableColumn fx:id="nameCol" prefWidth="136.0" text="name" />
+                              <TableColumn fx:id="ageCol" prefWidth="52.0" text="age" />
+                              <TableColumn fx:id="phoneNumberCol" prefWidth="105.0" text="phone number" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="deletePatientButton" layoutX="298.0" layoutY="314.0" mnemonicParsing="false" onAction="#deletePatientFunction" prefHeight="25.0" prefWidth="363.0" text="delete Patient by the inserted id" />
+                        <Button fx:id="updatePatientButton" layoutX="299.0" layoutY="349.0" mnemonicParsing="false" onAction="#updatePatientFunction" prefHeight="25.0" prefWidth="361.0" text="update patient by inserted id with inserted fields" />
+                        <Button fx:id="searchPatientButton" layoutX="298.0" layoutY="280.0" mnemonicParsing="false" onAction="#searchPatientFunction" prefHeight="25.0" prefWidth="363.0" text="search patient by the inserted id" />
+                        <TextField fx:id="ageForUpdate_tf" layoutX="130.0" layoutY="314.0" />
+                        <TextField fx:id="idForCrudPatient_tf" layoutX="130.0" layoutY="244.0" prefHeight="25.0" prefWidth="389.0" />
+                        <TextField fx:id="nameForUpdate_tf" layoutX="130.0" layoutY="280.0" />
+                        <TextField fx:id="phoneNumberForUpdate_tf" layoutX="131.0" layoutY="349.0" />
+                        <Label layoutX="43.0" layoutY="248.0" text="enter the id:" />
+                        <Label layoutX="45.0" layoutY="284.0" text="edit name" />
+                        <Label layoutX="50.0" layoutY="318.0" text="edit age" />
+                        <Label layoutX="20.0" layoutY="353.0" text="edit phone number" />
+                        <Button fx:id="clearFieldsForUpdatePatient" layoutX="526.0" layoutY="244.0" mnemonicParsing="false" onAction="#ClearFieldsForPatientUpdate" prefHeight="25.0" prefWidth="134.0" text="clear fields for update" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Add Appointment">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="283.0" prefWidth="682.0">
+                     <children>
+                        <Label layoutX="33.0" layoutY="68.0" text="Appointment ID" />
+                        <Label layoutX="57.0" layoutY="103.0" text="patient ID" />
+                        <Label layoutX="57.0" layoutY="141.0" text="problem" />
+                        <TextField fx:id="appointment_id_tf" layoutX="139.0" layoutY="64.0" prefHeight="25.0" prefWidth="137.0" />
+                        <TextField fx:id="patient_id_for_appointment_tf" layoutX="140.0" layoutY="99.0" prefHeight="25.0" prefWidth="135.0" />
+                        <TextField fx:id="problem_tf" layoutX="140.0" layoutY="137.0" prefHeight="25.0" prefWidth="135.0" />
+                        <Label layoutX="33.0" layoutY="178.0" text="emergency level" />
+                        <TextField fx:id="emergency_tf" layoutX="142.0" layoutY="174.0" prefHeight="25.0" prefWidth="134.0" />
+                        <Label layoutX="20.0" layoutY="23.0" text="Fill in appointment's details" />
+                        <Button fx:id="clearFieldsBtn1" layoutX="141.0" layoutY="210.0" mnemonicParsing="false" onAction="#ClearFieldsForAppointment" prefHeight="25.0" prefWidth="135.0" text="Clear fields" />
+                        <Button fx:id="addAppointment" layoutX="19.0" layoutY="210.0" mnemonicParsing="false" onAction="#addAppointment" prefHeight="25.0" prefWidth="115.0" text="Add Appointment" />
+                        <TableView fx:id="appointmentTable" layoutX="293.0" layoutY="58.0" prefHeight="177.0" prefWidth="365.0">
+                           <columns>
+                              <TableColumn fx:id="appointmentIDCol" prefWidth="96.0" text="AppointmentID" />
+                              <TableColumn fx:id="patientIDForAppointmentCol" prefWidth="64.0" text="PatientID" />
+                              <TableColumn fx:id="problemCol" prefWidth="102.66659545898438" text="problem" />
+                              <TableColumn fx:id="emergencyLevelCol" prefWidth="106.66668701171875" text="EmergencyLevel" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="deleteAppointmentButton" layoutX="299.0" layoutY="317.0" mnemonicParsing="false" onAction="#deleteAppointmentFunction" prefHeight="25.0" prefWidth="359.0" text="delete appointment by the inserted id" />
+                        <Button fx:id="updateAppointmentButton" layoutX="299.0" layoutY="350.0" mnemonicParsing="false" onAction="#updateAppointmentFunction" prefHeight="25.0" prefWidth="358.0" text="update appointment by inserted id with inserted fields" />
+                        <Button fx:id="searchAppointmentButton" layoutX="298.0" layoutY="287.0" mnemonicParsing="false" onAction="#searchAppointmentFunction" prefHeight="25.0" prefWidth="360.0" text="search appointment by inserted id" />
+                        <TextField fx:id="problemForUpdate_tf" layoutX="143.0" layoutY="317.0" prefHeight="25.0" prefWidth="139.0" />
+                        <TextField fx:id="idForCrudAppointment_tf" layoutX="141.0" layoutY="250.0" prefHeight="25.0" prefWidth="375.0" />
+                        <TextField fx:id="patientIDForUpdate_tf" layoutX="142.0" layoutY="287.0" prefHeight="25.0" prefWidth="139.0" />
+                        <TextField fx:id="emergencyLevelForUpdate_tf" layoutX="143.0" layoutY="350.0" prefHeight="25.0" prefWidth="140.0" />
+                        <Label layoutX="44.0" layoutY="254.0" text="enter the id:" />
+                        <Label layoutX="37.0" layoutY="321.0" text="edit problem" />
+                        <Label layoutX="39.0" layoutY="291.0" text="edit patient id" />
+                        <Label layoutX="17.0" layoutY="354.0" text="edit emergency level" />
+                        <Button fx:id="clearFieldsForUpdateAppointmentButton" layoutX="523.0" layoutY="250.0" mnemonicParsing="false" onAction="#ClearFieldsForAppointmentUpdate" prefHeight="25.0" prefWidth="133.0" text="clear fields for update" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Reports">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="patientTable1" layoutX="14.0" layoutY="126.0" prefHeight="259.0" prefWidth="291.0">
+                           <columns>
+                              <TableColumn fx:id="patientIDCol1" prefWidth="66.0" text="PatientID" />
+                              <TableColumn fx:id="nameCol1" prefWidth="113.33330535888672" text="name" />
+                              <TableColumn fx:id="phoneNumberCol1" prefWidth="41.999969482421875" text="phone nr" />
+                              <TableColumn fx:id="ageCol1" prefWidth="67.33338928222656" text="age" />
+                           </columns>
+                        </TableView>
+                        <TableView fx:id="appointmentTable1" layoutX="303.0" layoutY="126.0" prefHeight="259.0" prefWidth="364.0">
+                           <columns>
+                              <TableColumn fx:id="appointmentIDCol1" prefWidth="96.0" text="AppointmentID" />
+                              <TableColumn fx:id="patientIDForAppointmentCol1" prefWidth="64.0" text="PatientID" />
+                              <TableColumn fx:id="problemCol1" prefWidth="102.66659545898438" text="problem" />
+                              <TableColumn fx:id="emergencyLevelCol1" prefWidth="106.66668701171875" text="Emergency Level" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="emergencyLevelGreaterThanButton" layoutX="27.0" layoutY="14.0" mnemonicParsing="false" onAction="#emergencyLevelGreaterThanFuction" prefHeight="25.0" prefWidth="385.0" text="show me appoitnments/patients with emergency level greater than" />
+                        <TextField fx:id="showPatientsWithEmergencyLevelGreaterThan_tf" layoutX="433.0" layoutY="14.0" prefHeight="25.0" prefWidth="219.0" />
+                        <Button fx:id="showPatientsWhoSufferFromButton" layoutX="28.0" layoutY="49.0" mnemonicParsing="false" onAction="#showPatientsWhoSufferFromFunction" prefHeight="25.0" prefWidth="384.0" text="show me patients/appointments with diagnostic" />
+                        <TextField fx:id="showPatientsWhoSufferFrom_tf" layoutX="433.0" layoutY="49.0" prefHeight="25.0" prefWidth="219.0" />
+                        <Button fx:id="patientsByNameButton" layoutX="27.0" layoutY="84.0" mnemonicParsing="false" onAction="#patientsByNameFunction" prefHeight="25.0" prefWidth="385.0" text="show me patients/appointments by name" />
+                        <TextField fx:id="patientsByName_tf" layoutX="433.0" layoutY="84.0" prefHeight="25.0" prefWidth="219.0" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
